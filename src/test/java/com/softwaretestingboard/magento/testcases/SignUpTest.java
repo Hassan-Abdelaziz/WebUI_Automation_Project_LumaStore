@@ -1,5 +1,6 @@
 package com.softwaretestingboard.magento.testcases;
 
+import com.github.javafaker.Faker;
 import com.softwaretestingboard.magento.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,17 +9,18 @@ import pages.SignUpPage;
 
 public class SignUpTest extends BaseTest {
 
-    @Test
+    @Test (description = "Verify that user can sign up using all valid data")
     public void signUpWithValidData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
+        String mail = new Faker().internet().emailAddress();
         signUpPage.signUp("Hassan","Abdelaziz","testpassword@gmail.com","Hassan99","Hassan99");
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         Assert.assertTrue(myAccountPage.assertSuccessSignUpMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using empty firstname")
     public void signUpWithEmptyFirstNameAndValidData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -27,7 +29,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertFirstNameErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using special characters in firstname")
     public void signUpWithSpecialCharacterInFirstName(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -36,7 +38,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertFirstNameNotValidErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using empty lastname")
     public void signUpWithEmptyLastNameAndValidData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -45,7 +47,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertLastNameErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using special characters in lastname")
     public void signUpWithSpecialCharacterInLastName(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -54,7 +56,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertLastNameNotValidErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using empty Email")
     public void signUpWithEmptyEmailAndValidData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -63,7 +65,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertEmailErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using wrong Email format")
     public void signUpWithInvalidEmailFormatAndValidData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -72,7 +74,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertEmailErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using empty password")
     public void signUpWithEmptyPasswordAndValidData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -81,7 +83,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using empty confirm password")
     public void signUpWithEmptyConfirmPasswordAndValidData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -90,7 +92,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertConfirmPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up with empty data")
     public void signUpWithEmptyData(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -103,7 +105,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertConfirmPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using already registered Email")
     public void signUpWithRegisteredEmail(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -112,7 +114,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertEmailDuplicatedErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using un-matched passwords")
     public void signUpWithUnMatchedPasswords(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
@@ -121,7 +123,7 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signUpPage.assertConfirmPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign up using weak password")
     public void signUpWithWeakPassword(){
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();

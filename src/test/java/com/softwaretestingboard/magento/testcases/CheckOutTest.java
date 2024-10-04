@@ -9,7 +9,7 @@ import pages.LoginPage;
 
 public class CheckOutTest extends BaseTest {
 
-    @Test
+    @Test (description = "Verify that user can make an order as registered user using valid shipping data or already registered shipping data")
     public void checkOutItemAsUser(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -72,7 +72,7 @@ public class CheckOutTest extends BaseTest {
         Assert.assertTrue(checkOutPage.verifySuccessOrder());
     }
 
-    @Test
+    @Test (description = "Verify that guest user can make an order with valid shipping data")
     public void checkOutItemAsGuest(){
         HomePage homePage = new HomePage(driver);
 
@@ -129,7 +129,7 @@ public class CheckOutTest extends BaseTest {
         Assert.assertTrue(checkOutPage.verifySuccessOrder());
     }
 
-    @Test
+    @Test (description = "Verify that guest user cannot make an order with empty shipping method")
     public void verifyGuestCantCheckOutWithEmptyShippingMethod(){
         HomePage homePage = new HomePage(driver);
 
@@ -179,7 +179,7 @@ public class CheckOutTest extends BaseTest {
         Assert.assertTrue(checkOutPage.verifyEmptyShippingMethodErr());
     }
 
-    @Test
+    @Test (description = "Verify that guest user cannot make an order with empty shipping data")
     public void verifyGuestCantCheckOutWithEmptyData(){
         HomePage homePage = new HomePage(driver);
 

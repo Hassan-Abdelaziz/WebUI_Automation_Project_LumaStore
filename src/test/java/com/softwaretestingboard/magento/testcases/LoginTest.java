@@ -9,7 +9,7 @@ import pages.MyAccountPage;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test (description = "Verify that user can sign in using valid email and password")
     public void loginWithValidCredentials(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -20,7 +20,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(homePage.assertWelcomeMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user can sign in using valid email and password in full Cycle")
     public void loginWithValidCredentialsFullCycle(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -38,7 +38,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign in using Incorrect password")
     public void loginWithIncorrectPassword(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -48,7 +48,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.assertSignInErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign in using a non-registered Email")
     public void loginWithNonRegisteredEmail(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -58,7 +58,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.assertSignInErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign in using empty email")
     public void loginWithEmptyEmail(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -68,7 +68,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.assertEmptyMailErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign in using empty password")
     public void loginWithEmptyPassword(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -78,7 +78,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.assertEmptyPassErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign in using empty email and password")
     public void loginWithEmptyEmailAndPassword(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -89,7 +89,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.assertEmptyPassErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign in using old (changed) Password")
     public void loginWithOldPassword(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -99,7 +99,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(loginPage.assertSignInErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot sign in using old (changed) Email")
     public void loginWithOldEmail(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);

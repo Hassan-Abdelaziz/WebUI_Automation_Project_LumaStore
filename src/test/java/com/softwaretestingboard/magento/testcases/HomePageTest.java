@@ -7,7 +7,7 @@ import pages.HomePage;
 
 public class HomePageTest extends BaseTest {
 
-@Test
+    @Test (description = "Verify that homepage sliders are clickable")
     public void verifyThatHomePageSlidersClickable(){
     HomePage homePage = new HomePage(driver);
     homePage.clickMainSlider();
@@ -20,7 +20,7 @@ public class HomePageTest extends BaseTest {
     Assert.assertTrue(homePage.verifyHomeSlider2PageTitle());
     }
 
-    @Test
+    @Test (description = "Verify that user can navigate through categories")
     public void  verifyThatHoverCategoriesWork(){
         HomePage homePage = new HomePage(driver);
         homePage.hoverToMenCategory();

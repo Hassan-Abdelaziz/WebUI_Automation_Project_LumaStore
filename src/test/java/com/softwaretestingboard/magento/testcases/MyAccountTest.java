@@ -9,7 +9,7 @@ import pages.MyAccountPage;
 
 public class MyAccountTest extends BaseTest {
 
-    @Test
+    @Test (description = "Verify that user can change password using valid data")
 public void verifyChangePasswordWithVaildData(){
     LoginPage loginPage = new LoginPage(driver);
     loginPage.load();
@@ -26,7 +26,7 @@ public void verifyChangePasswordWithVaildData(){
     Assert.assertTrue(myAccountPage.assertSuccessChangeMsg());
 }
 
-    @Test
+    @Test (description = "Verify that user can change email using valid data")
     public void verifyChangeEmaildWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
@@ -43,7 +43,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.assertSuccessChangeMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot change password using empty current password")
     public void verifyUserCantChangePasswordWithEmptyCurrentPassword(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
@@ -60,7 +60,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.assertCurrentPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot change password using empty new password")
     public void verifyUserCantChangePasswordWithEmptyNewPassword(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
@@ -77,7 +77,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.assertNewPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot change password using empty confirm password")
     public void verifyUserCantChangePasswordWithEmptyConfirmsPassword(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
@@ -94,7 +94,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.assertNewPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot change password using un-matched passwords")
     public void verifyUserCantChangePasswordWithUnmatchedConfirmsPassword(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
@@ -111,7 +111,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.assertConfirmPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot change email using empty email")
     public void verifyUserCantChangeEmailWithEmptyEmail(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
@@ -128,7 +128,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.assertEmailErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot change email using empty current password")
     public void verifyUserCantChangeEmailWithEmptyCurrentPassword(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
@@ -145,7 +145,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.assertCurrentPasswordErrorMsg());
     }
 
-    @Test
+    @Test (description = "Verify that user cannot change email using wrong current password")
     public void verifyUserCantChangeEmailWithWrongCurrentPassword(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();

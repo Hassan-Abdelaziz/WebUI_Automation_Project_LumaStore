@@ -8,7 +8,7 @@ import pages.LoginPage;
 
 public class AddToCartTest extends BaseTest {
 
-    @Test
+    @Test (description = "Verify that registered user can add an item to cart with size and color")
     public void addItemWithSizeAndColorToCartWhileSignedIn(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
@@ -39,7 +39,7 @@ public class AddToCartTest extends BaseTest {
         Assert.assertEquals(homePage.firstItemInMiniCartColor(),homePage.itemColor());
     }
 
-    @Test
+    @Test (description = "Verify that guest user can add an item to cart with size and color")
     public void addItemWithSizeAndColorToCartAsGuest(){
         // navigate to homepage
         HomePage homePage = new HomePage(driver);
@@ -64,7 +64,7 @@ public class AddToCartTest extends BaseTest {
         Assert.assertEquals(homePage.firstItemInMiniCartColor(),homePage.itemColor());
     }
 
-    @Test
+    @Test (description = "Verify that guest user cart is empty by default")
     public void verifyThatEmptyMsgAppearsWhenMiniCartIsEmpty(){
         HomePage homePage = new HomePage(driver);
         homePage.viewCart();
