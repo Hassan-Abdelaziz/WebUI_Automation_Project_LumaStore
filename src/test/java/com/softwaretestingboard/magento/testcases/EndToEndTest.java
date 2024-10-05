@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
-public class EndToEndTests extends BaseTest {
+public class EndToEndTest extends BaseTest {
 
     @Test (description = "Verify that user can make an order as guest user using valid shipping data ")
     public void endToEndPurchaseCycleAsGuestUser(){

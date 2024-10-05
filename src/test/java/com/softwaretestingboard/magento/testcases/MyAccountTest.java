@@ -10,16 +10,18 @@ import pages.MyAccountPage;
 public class MyAccountTest extends BaseTest {
 
     //  hassan2@gmail.com            for bad change trials
-    //  hassanpassword@gmail.com     for change password
+    //  hassanpassword1@gmail.com     for change password
     //  hassanoldmail2@gmail.com     for change email
     //  hassannewmail2@gmail.com     for change email
 
+
+    // Modify After Script running
     @Test (description = "Verify that user can change password using valid data")
 public void verifyChangePasswordWithVaildData(){
     LoginPage loginPage = new LoginPage(driver);
     loginPage.load();
     Assert.assertTrue(loginPage.verifyLoginPageTitle());
-    loginPage.login("hassanpassword@gmail.com","Hassan99");
+    loginPage.login("hassanpassword1@gmail.com","Hassan99");
     HomePage homePage = new HomePage(driver);
     Assert.assertTrue(homePage.assertWelcomeMsg());
     homePage.navToMyAccount();
@@ -31,6 +33,33 @@ public void verifyChangePasswordWithVaildData(){
     Assert.assertTrue(myAccountPage.assertSuccessChangeMsg());
 }
 
+/*
+     private static String pass = "Hassan99";
+    @Test (description = "Verify that user can change password using valid data")
+    public void verifyChangePasswordWithVaildDataaa(){
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.load();
+        Assert.assertTrue(loginPage.verifyLoginPageTitle());
+        System.out.println(pass);
+        loginPage.login("hassanpassword1@gmail.com",pass);
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.assertWelcomeMsg());
+        homePage.navToMyAccount();
+        MyAccountPage myAccountPage = new MyAccountPage(driver);
+        Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
+        myAccountPage.navToAccInfoPage();
+        Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
+        int random = (int )(Math.random()*500+1);
+        String randomStr = String.valueOf(random);
+        myAccountPage.changePassword(pass,"Hassan"+randomStr,"Hassan"+randomStr);
+        pass = "Hassan"+randomStr; //274
+        System.out.println(pass);
+        Assert.assertTrue(myAccountPage.assertSuccessChangeMsg());
+    }
+*/
+
+
+    // Modify After Script running
     @Test (description = "Verify that user can change email using valid data")
     public void verifyChangeEmaildWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
@@ -96,7 +125,7 @@ public void verifyChangePasswordWithVaildData(){
         myAccountPage.navToAccInfoPage();
         Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
         myAccountPage.changePassword("Hassan99","Hassan123","");
-        Assert.assertTrue(myAccountPage.assertNewPasswordErrorMsg());
+        Assert.assertTrue(myAccountPage.assertConfirmPasswordErrorMsg());
     }
 
     @Test (description = "Verify that user cannot change password using un-matched passwords")

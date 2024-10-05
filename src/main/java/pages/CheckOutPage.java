@@ -58,7 +58,7 @@ public class CheckOutPage {
     }
 
     public void expandOrderSummary(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("checkout-loader")));
         if (!driver.findElement(orderSummaryClosed).isSelected()){
             driver.findElement(orderSummaryClosed).click();
