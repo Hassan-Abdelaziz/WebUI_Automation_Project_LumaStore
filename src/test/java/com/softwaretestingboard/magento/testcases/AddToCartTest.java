@@ -7,13 +7,15 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class AddToCartTest extends BaseTest {
+    // hassan4@gmail.com        for add to cart tests
 
     @Test (description = "Verify that registered user can add an item to cart with size and color")
     public void addItemWithSizeAndColorToCartWhileSignedIn(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
-        loginPage.login("tsunaimy111@gmail.com","Hassan99");
+        Assert.assertTrue(loginPage.verifyLoginPageTitle());
+        loginPage.login("hassan4@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
 

@@ -9,12 +9,17 @@ import pages.MyAccountPage;
 
 public class MyAccountTest extends BaseTest {
 
+    //  hassan2@gmail.com            for bad change trials
+    //  hassanpassword@gmail.com     for change password
+    //  hassanoldmail2@gmail.com     for change email
+    //  hassannewmail2@gmail.com     for change email
+
     @Test (description = "Verify that user can change password using valid data")
 public void verifyChangePasswordWithVaildData(){
     LoginPage loginPage = new LoginPage(driver);
     loginPage.load();
     Assert.assertTrue(loginPage.verifyLoginPageTitle());
-    loginPage.login("testpassword@gmail.com","Hassan99");
+    loginPage.login("hassanpassword@gmail.com","Hassan99");
     HomePage homePage = new HomePage(driver);
     Assert.assertTrue(homePage.assertWelcomeMsg());
     homePage.navToMyAccount();
@@ -31,7 +36,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testpassword@gmail.com","Hassan999");
+        loginPage.login("hassanoldmail2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();
@@ -39,7 +44,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
         myAccountPage.navToAccInfoPage();
         Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
-        myAccountPage.changeMail("testemail@gmail.com","Hassan999");
+        myAccountPage.changeMail("hassannewmail2@gmail.com","Hassan99");
         Assert.assertTrue(myAccountPage.assertSuccessChangeMsg());
     }
 
@@ -48,7 +53,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testemail@gmail.com","Hassan999");
+        loginPage.login("hassan2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();
@@ -65,7 +70,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testemail@gmail.com","Hassan999");
+        loginPage.login("hassan2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();
@@ -73,7 +78,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
         myAccountPage.navToAccInfoPage();
         Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
-        myAccountPage.changePassword("Hassan999","","Hassan123");
+        myAccountPage.changePassword("Hassan99","","Hassan123");
         Assert.assertTrue(myAccountPage.assertNewPasswordErrorMsg());
     }
 
@@ -82,7 +87,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testemail@gmail.com","Hassan999");
+        loginPage.login("hassan2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();
@@ -90,7 +95,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
         myAccountPage.navToAccInfoPage();
         Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
-        myAccountPage.changePassword("Hassan999","Hassan123","");
+        myAccountPage.changePassword("Hassan99","Hassan123","");
         Assert.assertTrue(myAccountPage.assertNewPasswordErrorMsg());
     }
 
@@ -99,7 +104,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testemail@gmail.com","Hassan999");
+        loginPage.login("hassan2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();
@@ -107,7 +112,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
         myAccountPage.navToAccInfoPage();
         Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
-        myAccountPage.changePassword("Hassan999","Hassan123","Hassan12345");
+        myAccountPage.changePassword("Hassan99","Hassan123","Hassan12345");
         Assert.assertTrue(myAccountPage.assertConfirmPasswordErrorMsg());
     }
 
@@ -116,7 +121,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testemail@gmail.com","Hassan999");
+        loginPage.login("hassan2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();
@@ -124,7 +129,7 @@ public void verifyChangePasswordWithVaildData(){
         Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
         myAccountPage.navToAccInfoPage();
         Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
-        myAccountPage.changeMail("","Hassan999");
+        myAccountPage.changeMail("","Hassan99");
         Assert.assertTrue(myAccountPage.assertEmailErrorMsg());
     }
 
@@ -133,7 +138,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testemail@gmail.com","Hassan999");
+        loginPage.login("hassan2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();
@@ -150,7 +155,7 @@ public void verifyChangePasswordWithVaildData(){
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("testemail@gmail.com","Hassan999");
+        loginPage.login("hassan2@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         homePage.navToMyAccount();

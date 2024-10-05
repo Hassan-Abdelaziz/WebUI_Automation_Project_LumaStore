@@ -1,5 +1,6 @@
 package com.softwaretestingboard.magento.testcases;
 
+import com.github.javafaker.Faker;
 import com.softwaretestingboard.magento.base.BaseTest;
 import pages.CheckOutPage;
 import pages.HomePage;
@@ -8,13 +9,15 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class CheckOutTest extends BaseTest {
+    // hassan3@gmail.com        for checkout tests
 
     @Test (description = "Verify that user can make an order as registered user using valid shipping data or already registered shipping data")
     public void checkOutItemAsUser(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
-        loginPage.login("tsunaimy111@gmail.com","Hassan99");
+        Assert.assertTrue(loginPage.verifyLoginPageTitle());
+        loginPage.login("hassan3@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
 
@@ -112,10 +115,11 @@ public class CheckOutTest extends BaseTest {
         Assert.assertEquals(checkOutPage.firstItemInCheckOutColor(),homePage.firstItemInMiniCartColor());
 
         // Fill shipping address
-            checkOutPage.addCustomerMail("testcheckout@gmail.com");
-            checkOutPage.addNewAddress("Hassan","Abdelaziz","Main st.","Chicago","12345","123456789");
-            checkOutPage.chooseCountry("United States");
-            checkOutPage.chooseState("Illinois");
+        String email = new Faker().internet().emailAddress();
+        checkOutPage.addCustomerMail(email);
+        checkOutPage.addNewAddress("Hassan","Abdelaziz","Main st.","Chicago","12345","123456789");
+        checkOutPage.chooseCountry("United States");
+        checkOutPage.chooseState("Illinois");
 
         //  choose shipping method
         checkOutPage.chooseShippingMethod("table");   // choose "flat" or "table" method
@@ -169,10 +173,11 @@ public class CheckOutTest extends BaseTest {
         Assert.assertEquals(checkOutPage.firstItemInCheckOutColor(),homePage.firstItemInMiniCartColor());
 
         // Fill shipping address
-            checkOutPage.addCustomerMail("testcheckout@gmail.com");
-            checkOutPage.addNewAddress("Hassan","Abdelaziz","Main st.","Chicago","12345","123456789");
-            checkOutPage.chooseCountry("United States");
-            checkOutPage.chooseState("Illinois");
+        String email = new Faker().internet().emailAddress();
+        checkOutPage.addCustomerMail(email);
+        checkOutPage.addNewAddress("Hassan","Abdelaziz","Main st.","Chicago","12345","123456789");
+        checkOutPage.chooseCountry("United States");
+        checkOutPage.chooseState("Illinois");
 
         //  choose shipping method
         checkOutPage.toReviewAndPayment();

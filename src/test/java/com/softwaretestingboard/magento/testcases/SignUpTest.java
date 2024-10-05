@@ -14,8 +14,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        String mail = new Faker().internet().emailAddress();
-        signUpPage.signUp("Hassan","Abdelaziz","testpassword@gmail.com","Hassan99","Hassan99");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("Hassan","Abdelaziz",email,"Hassan99","Hassan99");
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         Assert.assertTrue(myAccountPage.assertSuccessSignUpMsg());
     }
@@ -25,7 +25,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("","Abdelaziz","tsunaimy333@gmail.com","Hassan99","Hassan99");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("","Abdelaziz",email,"Hassan99","Hassan99");
         Assert.assertTrue(signUpPage.assertFirstNameErrorMsg());
     }
 
@@ -34,7 +35,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("@h","Abdelaziz","tsunaimy333@gmail.com","Hassan99","Hassan99");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("@h","Abdelaziz",email,"Hassan99","Hassan99");
         Assert.assertTrue(signUpPage.assertFirstNameNotValidErrorMsg());
     }
 
@@ -43,7 +45,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","","tsunaimy333@gmail.com","Hassan99","Hassan99");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("Hassan","",email,"Hassan99","Hassan99");
         Assert.assertTrue(signUpPage.assertLastNameErrorMsg());
     }
 
@@ -52,7 +55,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","@h","tsunaimy333@gmail.com","Hassan99","Hassan99");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("Hassan","@h",email,"Hassan99","Hassan99");
         Assert.assertTrue(signUpPage.assertLastNameNotValidErrorMsg());
     }
 
@@ -70,7 +74,7 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","Abdelaziz","tsunaimy333@gmail","Hassan99","Hassan99");
+        signUpPage.signUp("Hassan","Abdelaziz","hassan333@gmail","Hassan99","Hassan99");
         Assert.assertTrue(signUpPage.assertEmailErrorMsg());
     }
 
@@ -79,7 +83,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","Abdelaziz","tsunaimy333@gmail.com","","Hassan99");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("Hassan","Abdelaziz",email,"","Hassan99");
         Assert.assertTrue(signUpPage.assertPasswordErrorMsg());
     }
 
@@ -88,7 +93,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","Abdelaziz","tsunaimy333@gmail.com","Hassan99","");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("Hassan","Abdelaziz",email,"Hassan99","");
         Assert.assertTrue(signUpPage.assertConfirmPasswordErrorMsg());
     }
 
@@ -110,7 +116,7 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","Abdelaziz","tsunaimy111@gmail.com","Hassan99","Hassan99");
+        signUpPage.signUp("Hassan","Abdelaziz","hassan1@gmail.com","Hassan99","Hassan99");
         Assert.assertTrue(signUpPage.assertEmailDuplicatedErrorMsg());
     }
 
@@ -119,7 +125,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","Abdelaziz","tsunaimy333@gmail.com","Hassan99","Hassan9");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("Hassan","Abdelaziz",email,"Hassan99","Hassan9");
         Assert.assertTrue(signUpPage.assertConfirmPasswordErrorMsg());
     }
 
@@ -128,7 +135,8 @@ public class SignUpTest extends BaseTest {
         SignUpPage signUpPage = new SignUpPage(driver);
         signUpPage.load();
         Assert.assertTrue(signUpPage.verifySignUpPageTitle());
-        signUpPage.signUp("Hassan","Abdelaziz","tsunaimy333@gmail.com","12345678h","12345678h");
+        String email = new Faker().internet().emailAddress();
+        signUpPage.signUp("Hassan","Abdelaziz",email,"12345678h","12345678h");
         Assert.assertTrue(signUpPage.assertPasswordErrorMsg());
     }
 

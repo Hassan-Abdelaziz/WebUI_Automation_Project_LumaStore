@@ -9,13 +9,16 @@ import pages.MyAccountPage;
 
 public class LoginTest extends BaseTest {
 
+    //  hassan1@gmail.com    for login trials
+    //  hassanoldmail@gmail.com     for old email trial
+
     @Test (description = "Verify that user can sign in using valid email and password")
     public void loginWithValidCredentials(){
         //  sign in
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("tsunaimy111@gmail.com","Hassan99");
+        loginPage.login("hassan1@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
     }
@@ -26,14 +29,14 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("tsunaimy111@gmail.com","Hassan99");
+        loginPage.login("hassan1@gmail.com","Hassan99");
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.assertWelcomeMsg());
         // LogOut
         homePage.signOut();
         // sign in again
         loginPage.load();
-        loginPage.login("tsunaimy111@gmail.com","Hassan99");
+        loginPage.login("hassan1@gmail.com","Hassan99");
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
     }
@@ -44,7 +47,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("tsunaimy111@gmail.com","Hassan");
+        loginPage.login("hassan1@gmail.com","Hassan");
         Assert.assertTrue(loginPage.assertSignInErrorMsg());
     }
 
@@ -54,7 +57,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("tsunaimy753@gmail.com","Hassan99");
+        loginPage.login("hassan753@gmail.com","Hassan99");
         Assert.assertTrue(loginPage.assertSignInErrorMsg());
     }
 
@@ -74,7 +77,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("tsunaimy111@gmail.com","");
+        loginPage.login("hassan1@gmail.com","");
         Assert.assertTrue(loginPage.assertEmptyPassErrorMsg());
     }
 
@@ -95,7 +98,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("tsunaimy111@gmail.com","Hassan123");
+        loginPage.login("hassan1@gmail.com","Hassan123");
         Assert.assertTrue(loginPage.assertSignInErrorMsg());
     }
 
@@ -105,7 +108,7 @@ public class LoginTest extends BaseTest {
         LoginPage loginPage= new LoginPage(driver);
         loginPage.load();
         Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        loginPage.login("tsunaimy111old@gmail.com","Hassan99");
+        loginPage.login("hassanoldmail@gmail.com","Hassan99");
         Assert.assertTrue(loginPage.assertSignInErrorMsg());
     }
 
