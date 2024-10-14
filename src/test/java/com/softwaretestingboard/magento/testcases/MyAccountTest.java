@@ -33,32 +33,6 @@ public void verifyChangePasswordWithVaildData(){
     Assert.assertTrue(myAccountPage.assertSuccessChangeMsg());
 }
 
-/*
-     private static String pass = "Hassan99";
-    @Test (description = "Verify that user can change password using valid data")
-    public void verifyChangePasswordWithVaildDataaa(){
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.load();
-        Assert.assertTrue(loginPage.verifyLoginPageTitle());
-        System.out.println(pass);
-        loginPage.login("hassanpassword1@gmail.com",pass);
-        HomePage homePage = new HomePage(driver);
-        Assert.assertTrue(homePage.assertWelcomeMsg());
-        homePage.navToMyAccount();
-        MyAccountPage myAccountPage = new MyAccountPage(driver);
-        Assert.assertTrue(myAccountPage.verifyMyAccountPageTitle());
-        myAccountPage.navToAccInfoPage();
-        Assert.assertTrue(myAccountPage.verifyAccountInformationPageTitle());
-        int random = (int )(Math.random()*500+1);
-        String randomStr = String.valueOf(random);
-        myAccountPage.changePassword(pass,"Hassan"+randomStr,"Hassan"+randomStr);
-        pass = "Hassan"+randomStr; //274
-        System.out.println(pass);
-        Assert.assertTrue(myAccountPage.assertSuccessChangeMsg());
-    }
-*/
-
-
     // Modify After Script running
     @Test (description = "Verify that user can change email using valid data")
     public void verifyChangeEmaildWithVaildData(){
