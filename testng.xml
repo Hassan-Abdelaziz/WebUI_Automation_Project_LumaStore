@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="F:/ITI Content/17- PROJECTS/LumaStore_WebAutomation">
+        <classes>
+
+            <class name="com.softwaretestingboard.magento.testcases.SignUpTest">
+                <methods>
+                    <include name="signUpWithValidData"/>
+                    <include name="signUpWithEmptyFirstNameAndValidData"/>
+                    <include name="signUpWithSpecialCharacterInFirstName"/>
+                    <include name="signUpWithEmptyLastNameAndValidData"/>
+                    <include name="signUpWithSpecialCharacterInLastName"/>
+                    <include name="signUpWithEmptyEmailAndValidData"/>
+                    <include name="signUpWithInvalidEmailFormatAndValidData"/>
+                    <include name="signUpWithEmptyPasswordAndValidData"/>
+                    <include name="signUpWithEmptyConfirmPasswordAndValidData"/>
+                    <include name="signUpWithEmptyData"/>
+                    <include name="signUpWithRegisteredEmail"/>
+                    <include name="signUpWithUnMatchedPasswords"/>
+                    <include name="signUpWithWeakPassword"/>
+                </methods>
+            </class>
+
+            <class name="com.softwaretestingboard.magento.testcases.LoginTest">
+                <methods>
+                    <include name="loginWithValidCredentials"/>
+                    <include name="loginWithValidCredentialsFullCycle"/>
+                    <include name="loginWithIncorrectPassword"/>
+                    <include name="loginWithNonRegisteredEmail"/>
+                    <include name="loginWithEmptyEmail"/>
+                    <include name="loginWithEmptyPassword"/>
+                    <include name="loginWithEmptyEmailAndPassword"/>
+                    <include name="loginWithOldPassword"/>
+                    <include name="loginWithOldEmail"/>
+                </methods>
+            </class>
+
+            <class name="com.softwaretestingboard.magento.testcases.MyAccountTest">
+                <methods>
+                    <include name="verifyChangePasswordWithVaildData"/>
+                    <include name="verifyChangeEmaildWithVaildData"/>
+                    <include name="verifyUserCantChangePasswordWithEmptyCurrentPassword"/>
+                    <include name="verifyUserCantChangePasswordWithEmptyNewPassword"/>
+                    <include name="verifyUserCantChangePasswordWithEmptyConfirmsPassword"/>
+                    <include name="verifyUserCantChangePasswordWithUnmatchedConfirmsPassword"/>
+                    <include name="verifyUserCantChangeEmailWithEmptyEmail"/>
+                    <include name="verifyUserCantChangeEmailWithEmptyCurrentPassword"/>
+                    <include name="verifyUserCantChangeEmailWithWrongCurrentPassword"/>
+                </methods>
+            </class>
+
+            <class name="com.softwaretestingboard.magento.testcases.HomePageTest">
+                <methods>
+                    <include name="verifyThatHomePageSlidersClickable"/>
+                    <include name="verifyThatHoverCategoriesWork"/>
+                </methods>
+            </class>
+
+            <class name="com.softwaretestingboard.magento.testcases.AddToCartTest">
+                <methods>
+                    <include name="addItemWithSizeAndColorToCartWhileSignedIn"/>
+                    <include name="addItemWithSizeAndColorToCartAsGuest"/>
+                    <include name="verifyThatEmptyMsgAppearsWhenMiniCartIsEmpty"/>
+                </methods>
+            </class>
+
+            <class name="com.softwaretestingboard.magento.testcases.CheckOutTest">
+                <methods>
+                    <include name="checkOutItemAsUser"/>
+                    <include name="checkOutItemAsGuest"/>
+                    <include name="verifyGuestCantCheckOutWithEmptyShippingMethod"/>
+                    <include name="verifyGuestCantCheckOutWithEmptyData"/>
+                </methods>
+            </class>
+
+            <class name="com.softwaretestingboard.magento.testcases.EndToEndTest">
+                <methods>
+                    <include name="endToEndPurchaseCycleAsGuestUser"/>
+                    <include name="endToEndPurchaseCycleAsRegisteredUser"/>
+                    <include name="endToEndChangePasswordCycle"/>
+                    <include name="endToEndChangeEmailCycle"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
